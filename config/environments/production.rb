@@ -1,5 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "wss://【Herokuアプリ名】.herokuapp.com/cable" 
+  config.action_cable.allowed_request_origins = ['https://【Herokuアプリ名】.herokuapp.com', 'http://【kosei315】.herokuapp.com']
+
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "ws://【Elastic IP】/cable" 
+  config.action_cable.allowed_request_origins = ['http://【Elastic IP】']
 
   # Code is not reloaded between requests.
   config.cache_classes = true
